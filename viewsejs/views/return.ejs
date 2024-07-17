@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<%- include('../modulos/head.ejs'); %>
+<title>Ferremax - Pago</title>
+
+
+<link rel="stylesheet" href="css/orden.css">
+</head>
+<body>
+    <%- include('../modulos/navbar.ejs'); %>
+
+    <br>
+    <br>
+
+  <div class="container">
+<div class="customer_details orderList">
+             
+            </div> 
+            <div id="order_tab" class="orderCardWrap tab-content1 current">
+              <div class="orderCard">
+                <div class="orderHead">
+                  <ul class="orderLeft">
+                    <li>
+                    </li>
+                    <li>
+                    </li>                
+                  </ul>
+                  
+                    
+                  
+                </div>
+                <div class="itemDetails return">
+                  
+                  
+                    <h1 class="tituloNoRealizada">Transacción no realizada</h1>
+                    <p class="parrafoNoRealizada">Serás redirigido a la página principal</p>
+                    
+                  <div class="btn_group" style="margin-top: 50px;">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+
+           
+                
+                
+              
+            </div>
+           </div>
+          </div>
+
+
+          <%- include('../modulos/scripts.ejs');%>
+
+  </body>
+
+  <script>
+    setTimeout(function() {
+      window.location.href = '/'; 
+    }, 3000);
+  </script>
+
+
+  </html>

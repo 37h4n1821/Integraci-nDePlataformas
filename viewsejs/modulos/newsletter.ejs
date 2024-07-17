@@ -1,0 +1,66 @@
+<!-- Modal del Carrito de Compras -->
+<div class="modal fade" id="newsletter" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Suscribete a nuestro catalogo online</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Suscribete para que no te pierdas de nuestro catalogo, directamente a tu correo.</p>
+            <form>
+                <md-outlined-text-field id="Email" placeholder="email@domain.com" 
+                name="email"
+                label="Email"
+                required
+                supporting-text="*requerido"
+                error-text="correo ya registrado">
+                </md-outlined-text-field>
+                
+                <button type="button" onclick="subscribirse()" style="border:0px; box-shadow: none; background-color: transparent;">
+                    <md-fab label="Suscribirse">
+                    <md-icon slot="icon">newspaper</md-icon>
+                    </md-fab>
+                </button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No gracias</button>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+<script>
+    async function subscribirse(){
+        const email = document.getElementById("Email").value;
+        if(email===""){
+            document.getElementById("Email").setAttribute("error",true);
+            document.getElementById("Email").setAttribute("error-text","Porfavor ingrese un correo");
+            return;
+        }
+        document.getElementById("Email").setAttribute("error",false);
+        try {
+            const response = await fetch('/api/suscriptions/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ correo: email })
+            });
+            const result = await response.json();
+            console.log(result);
+            
+            if (response.ok) {
+                $('#newsletter').modal('hide');
+            } else {
+                document.getElementById("Email").setAttribute("error",true);
+                document.getElementById("Email").setAttribute("error-text",result.error);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+
+    }
+</script>

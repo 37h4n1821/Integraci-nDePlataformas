@@ -1,0 +1,116 @@
+<!-- Modal del Carrito de Compras -->
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+          
+        </div>
+        <div id="carritoModalContent" class="modal-body">
+         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" onclick="vaciarCarrito()" class="btn btn-secondary">Vaciar</button>
+          <a id="pagarBtn" onclick="return pagar()" class="btn btn-primary">Ir a Pagar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+              let carrito = [];
+
+function vaciarCarrito(){
+  carrito = [];
+  actualizarCarritoModal();
+}
+
+function agregarAlCarrito(element) {
+  event.preventDefault();
+  
+  let itemExistente = carrito.find(item => item.Nombre === element.Nombre); //Esto funciona ya que find busca en el objeto y si existe lo que busca devuelve el objeto
+
+  if (itemExistente) {
+   
+
+    itemExistente.Peso += 1;
+    if(itemExistente.Peso > itemExistente.Cantidad){
+      alert('Cantidad deseada supera stock de tienda.')
+      return;
+    }else{
+      alert('Producto agregado a su carrito.')
+      actualizarCarritoModal(); 
+      return;
+    }
+    
+  } else {
+    
+    element.Peso = 1;
+    carrito.push(element);
+    actualizarCarritoModal();
+    alert('Producto agregado a su carrito.')
+  }
+}
+
+
+function pagar() {
+      let total = 0;
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+
+      if (carrito.length > 0) {
+        carrito.forEach(element => {
+          total += element.Precio * element.Peso;
+        });
+
+        const extraCharge = 3500;
+        const totalWithExtra = total + extraCharge;
+
+        window.location.href = `/pagarwebpay?total=${totalWithExtra}`;
+        return true;
+      } else {
+        alert('Debes agregar productos en tu carrito.');
+        return false;
+      }
+    }
+
+function actualizarCarritoModal() {
+  let contenidoModal = document.getElementById('carritoModalContent');
+  contenidoModal.innerHTML = ''; 
+
+  carrito.forEach(item => {
+    let divItem = document.createElement('div');
+    divItem.classList.add('item');
+
+    let img = document.createElement('img');
+    img.setAttribute('src', `data:image/jpeg;base64,${item.Img}`);
+    if(item.Img === null){
+      img.setAttribute('src', '/assets/img/taladro2.jpg');
+    }
+    img.setAttribute('style', 'width: 100px;');
+
+    let divDetails = document.createElement('div');
+    divDetails.classList.add('details');
+
+    let nombreItem = document.createElement('h6');
+    nombreItem.textContent = item.Nombre;
+
+    let precioItem = document.createElement('p');
+    precioItem.textContent = 'Precio: ' + item.Precio;
+
+    let cantidadItem = document.createElement('p');
+    cantidadItem.textContent = 'Cantidad: ' + item.Peso;
+
+    divDetails.appendChild(nombreItem);
+    divDetails.appendChild(precioItem);
+    divDetails.appendChild(cantidadItem);
+
+    divItem.appendChild(img);
+    divItem.appendChild(divDetails);
+
+    contenidoModal.appendChild(divItem);
+  });
+}
+
+  </script>

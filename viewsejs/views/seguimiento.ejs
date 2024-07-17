@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<%- include('../modulos/head.ejs'); %>
+<title>Ferremax - Pago</title>
+
+
+<link rel="stylesheet" href="/css/orden.css">
+<link rel="stylesheet" href="/css/boot.css">
+<link rel="stylesheet" href="/css/general.css">
+<link rel="stylesheet" href="/css/template.css">
+<link rel="stylesheet" href="/css/newsletter.css">
+</head>
+<body>
+    <%- include('../modulos/navbar.ejs'); %>
+
+    <br>
+    <br>
+
+  <div class="container">
+<div class="customer_details orderList">
+             
+            </div> 
+            <div id="order_tab" class="orderCardWrap tab-content1 current">
+              <div class="orderCard">
+                <div class="orderHead">
+                  <ul class="orderLeft">
+                    <li>
+                    </li>
+                    <li>
+                    </li>                
+                  </ul>
+                  
+                    
+                  
+                </div>
+                <div class="itemDetails return">
+
+                    <h1 class="">Su orden: <%= orden.Numero_Orden %></h1>
+                    <p>Fecha de Pedido: <%= orden.Fecha_Actual %></p>
+                    <p>Fecha de Despacho: <%= orden.Fecha_Despacho %></p>
+                    <p>SubTotal: $<%= orden.Total %></p>
+                    <p>Total: $<%= orden.Total_Despacho %></p>
+                    <h2>Detalles de los productos:</h2>
+                    <ul>
+                        <% for (let i = 0; i < orden.Items.length; i++) { %>
+                        <li>
+                            Producto: <%= orden.Items[i] %><br>
+                            Precio: $<%= orden.Precios[i] %><br>
+                            Cantidad: <%= orden.Cantidades[i] %>
+                        </li>
+                        <% } %>
+                    </ul>
+                    <% if (orden.Aceptado === 1) { %>
+                        <h2>Producto en Ruta</h2>
+                      <% } else { %>
+                        <h2>Producto no despachado</h2>
+                      <% } %>
+                    
+
+                    
+                  
+                  
+                    
+                    
+                  <div class="btn_group" style="margin-top: 50px;">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+
+           
+                
+                
+              
+            </div>
+           </div>
+          </div>
+
+
+          <%- include('../modulos/scripts.ejs');%>
+
+  </body>
+
+
+
+  </html>

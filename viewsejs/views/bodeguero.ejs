@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/bodeguero.css">
+
+
+  <%- include('../modulos/head.ejs'); %>
+
+
+
+</head>
+
+<body>
+
+
+  <body>
+    <div class="dashboard">
+      <div class="left-side-bar">
+        <div class="menu">
+          <ul>
+            <li >
+              <i class="fa fa-edit"></i>
+              <span><a href="/dashboard">Productos</a></span>
+            </li>
+           
+            <li class="active">
+              <i class="fa fa-edit"></i>
+              <span><a href="/bodeguero">Bodeguero</a></span>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+      <div id="contenedorPrincipal" class="main-container">
+
+       
+       
+
+        
+      </div>
+    </div>
+
+
+  </body>
+
+
+
+
+    <%- include('../modulos/scripts.ejs');%>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            obtenerBoletas();
+        })
+        async function obtenerBoletas(url='api/ordenes'){
+            const response = await fetch(url);
+            const result = await response.json();
+
+            console.log(result)
+            const contenedorPrincipal = document.getElementById('contenedorPrincipal');
+            contenedorPrincipal.classList.add('main-container');
+
+            result.forEach(element => {
+        // Parsear los datos JSON de Items, Precios y Cantidades
+        const items = JSON.parse(element.Items);
+        const precios = JSON.parse(element.Precios);
+        const cantidades = JSON.parse(element.Cantidades);
+
+        const divRow = document.createElement('div');
+        divRow.classList.add('row', 'mt-3');
+
+        const divContenedorOrden = document.createElement('div');
+        divContenedorOrden.classList.add('contenedorOrden');
+
+        const tituloOrden = document.createElement('h3');
+        tituloOrden.innerHTML = '#' + element.Numero_Orden + ' Pago Realizado';
+
+        const detallesBtn = document.createElement('button');
+        detallesBtn.classList.add('detallesBtn', 'btn', 'btn-primary');
+        if(element.Aceptado === 1) {
+          detallesBtn.innerText = 'En ruta';
+        } else {
+          detallesBtn.innerText = 'No aceptado';
+        }
+        detallesBtn.addEventListener('click', () => {
+          cambiarEstadoOrden(element.Numero_Orden, element.Aceptado, detallesBtn);
+        });
+
+        const detallesItems = document.createElement('ul');
+        items.forEach((item, index) => {
+          const li = document.createElement('li');
+          li.innerHTML = `Producto: ${item}, Precio: $${precios[index]}, Cantidad: ${cantidades[index]}`;
+          detallesItems.appendChild(li);
+        });
+
+        divContenedorOrden.appendChild(tituloOrden);
+        divContenedorOrden.appendChild(detallesItems);
+        divContenedorOrden.appendChild(detallesBtn);
+        divRow.appendChild(divContenedorOrden);
+        contenedorPrincipal.appendChild(divRow);
+      });
+    
+
+        }
+
+        async function cambiarEstadoOrden(numeroOrden, estadoActual, detallesBtn) {
+        const nuevoEstado = estadoActual === 1 ? 0 : 1;
+        try {
+            const response = await fetch('/api/estadoOrden', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ numeroOrden, nuevoEstado })
+            });
+
+            if (response.ok) {
+            const result = await response.json();
+            if (result.affectedRows > 0) {
+                detallesBtn.innerText = nuevoEstado === 1 ? 'En ruta' : 'No aceptado';
+                detallesBtn.closest('div').dataset.estado = nuevoEstado;
+            } else {
+                alert('Error al actualizar el estado.');
+            }
+            } else {
+            alert('Error al actualizar el estado.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error al actualizar el estado.');
+        }
+    }
+
+
+       
+
+
+
+        
+    </script>
+
+
+</body>
+
+</html>

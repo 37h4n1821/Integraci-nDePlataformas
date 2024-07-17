@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+
+  <%- include('../modulos/head.ejs'); %>
+
+
+
+</head>
+
+<body>
+
+
+  <body>
+    <div class="dashboard">
+      <div class="left-side-bar">
+        <div class="menu">
+          <ul>
+            <li class="active">
+              <i class="fa fa-edit"></i>
+              <span>Productos</span>
+            </li>
+           
+            <li>
+              <i class="fa fa-edit"></i>
+              <span><a href="/bodeguero">Bodeguero</a></span>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+      <div class="main-container">
+
+        <div class="main-view">
+          <div class="properties">
+            <div class="container" id="product-container">
+            </div>
+          </div>
+        </div>
+
+        <button class="floating-btn" data-bs-toggle="modal" data-bs-target="#crearModal">
+          <span class="text-floating">+</span>
+        </button>
+      </div>
+    </div>
+
+
+  </body>
+
+  <%- include('../modulos/crearModal.ejs');%>
+
+
+
+    <%- include('../modulos/scripts.ejs');%>
+
+      <script>
+
+        let tiposCacheados = [];
+        async function fetchTiposProductos() {
+          try {
+            const response = await fetch('/api/tipos/');
+            tiposCacheados = await response.json();
+          } catch (err) {
+            console.error('Error al obtener los tipos de productos:', err);
+          }
+        }
+
+        fetchTiposProductos();
+
+       
+
+        
+
+        document.getElementById('crearForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+
+        try {
+          const response = await fetch('/api/crearProducto', {
+            method: 'POST',
+            body: formData
+          });
+          const result = await response.json();
+          if (response.ok) {
+            alert(result.message);
+            window.location.reload(); // Recargar la página
+          } else {
+            alert('Error al crear el producto: ' + result.error);
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert('Error al crear el producto');
+        }
+      });
+
+         
+
+        async function obtenerProductos(url = '/api/productos') {
+          try {
+            const response = await fetch(url);
+            const result = await response.json();
+            console.log(result);
+            const productContainer = document.getElementById('product-container');
+
+
+
+            productContainer.innerHTML = '';
+
+            let row;
+
+
+            result.forEach((product, index) => {
+              if (index % 3 === 0) {
+                row = document.createElement('div');
+                row.classList.add('row');
+                productContainer.appendChild(row);
+              }
+
+
+              const col = document.createElement('div');
+              col.classList.add('col-lg-4', 'col-md-6');
+
+              const item = document.createElement('div');
+              item.classList.add('item');
+
+              const link = document.createElement('a');
+              link.href = "#";
+              const img = document.createElement('img');
+              if (product.Img) {
+                img.src = `data:image/jpeg;base64,${product.Img}`;
+              } else {
+                img.src = '/assets/img/taladro2.jpg'; // Imagen estática en caso de no tener imagen en el producto
+              }
+              img.alt = "";
+              link.appendChild(img);
+
+              const category = document.createElement('span');
+              category.classList.add('category');
+              category.textContent = product.Tipo;
+
+              const price = document.createElement('h6');
+              const priceDolar = document.createElement('p');
+              priceDolar.classList.add('precioDolar')
+              price.textContent = `$${product.Precio}`;
+              priceDolar.textContent = ` $${Number((product.Precio / product.CMF.Dolar).toFixed(2))} USD`;
+              const title = document.createElement('h4');
+              const titleLink = document.createElement('a');
+              titleLink.textContent = product.Nombre;
+              title.appendChild(titleLink);
+
+              const ul = document.createElement('ul');
+
+              const liRooms = document.createElement('li');
+              liRooms.textContent = `Stock: ${product.Cantidad}`;
+              ul.appendChild(liRooms);
+
+              const liBathrooms = document.createElement('li');
+              liBathrooms.textContent = `Color: ${product.Color}`;
+              ul.appendChild(liBathrooms);
+
+              const liArea = document.createElement('li');
+              liArea.textContent = `Modelo: ${product.Modelo}`;
+              ul.appendChild(liArea);
+
+              const liFloors = document.createElement('li');
+              liFloors.textContent = `Garantía: ${product.Garantia} Meses`;
+              ul.appendChild(liFloors);
+
+              const liParking = document.createElement('li');
+              liParking.textContent = `Peso: ${product.Peso} KG`;
+              ul.appendChild(liParking);
+
+              const mainButton = document.createElement('div');
+              mainButton.classList.add('main-button');
+              const buttonLink = document.createElement('a');
+              buttonLink.href = "#";
+              buttonLink.textContent = "Editar";
+
+              let datos = JSON.stringify(product);
+              buttonLink.setAttribute('onclick', `editarModal(${datos})`);
+              mainButton.appendChild(buttonLink);
+
+
+              item.appendChild(link);
+              item.appendChild(category);
+              item.appendChild(price);
+              item.appendChild(priceDolar);
+              item.appendChild(title);
+              item.appendChild(mainButton);
+              col.appendChild(item);
+              row.appendChild(col);
+              productContainer.appendChild(row);
+            });
+
+          } catch (err) {
+            console.log(err);
+          }
+        }
+
+
+
+        function editarModal(datos) {
+          let titulo = document.getElementById('modalTitulo');
+          console.log(datos)
+
+          $('#editarModal').modal('show');
+
+          let principalContainer = document.getElementById('contenedorEditar');
+          principalContainer.innerHTML = '';
+          titulo.innerHTML = '';
+
+          let form = document.createElement('form');
+          form.setAttribute('id', 'editarForm');
+
+          let modalContent = document.createElement('div');
+          modalContent.classList.add('modal-body');
+          modalContent.setAttribute('id', 'editarModalContent');
+
+          let modalFooter = document.createElement('div');
+          modalFooter.classList.add('modal-footer');
+
+          let closeBtn = document.createElement('button');
+          closeBtn.setAttribute('type', 'button');
+          closeBtn.classList.add('btn', 'btn-secondary');
+          closeBtn.setAttribute('data-bs-dismiss', 'modal');
+          closeBtn.textContent = 'Cerrar';
+
+          let submitBtn = document.createElement('button');
+          submitBtn.setAttribute('type', 'submit');
+          submitBtn.classList.add('btn', 'btn-primary');
+          submitBtn.setAttribute('id', 'submitBtn');
+          submitBtn.textContent = 'Editar';
+
+          let eliminarBtn = document.createElement('button');
+          eliminarBtn.setAttribute('type', 'button');
+
+         eliminarBtn.setAttribute('onclick', `eliminar(${datos.ID})`); 
+          
+          eliminarBtn.classList.add('btn', 'btn-danger');
+          eliminarBtn.setAttribute('id', 'eliminarBtn');
+          eliminarBtn.textContent = 'Eliminar';
+
+          modalFooter.appendChild(eliminarBtn);
+          modalFooter.appendChild(closeBtn);
+          modalFooter.appendChild(submitBtn);
+
+          titulo.textContent = `Editar Producto: ${datos.Nombre}`;
+
+          let divNombre = document.createElement('div');
+          divNombre.classList.add('mb-3');
+          let labelNombre = document.createElement('label');
+          labelNombre.classList.add('form-label');
+          labelNombre.textContent = 'Nombre';
+          let idHidden = document.createElement('input');
+          idHidden.setAttribute('type', 'hidden');
+          idHidden.setAttribute('name', 'ID');
+
+          idHidden.value = `${datos.ID}`;
+          let inputNombre = document.createElement('input');
+          inputNombre.classList.add('form-control');
+          inputNombre.setAttribute('type', 'text');
+          inputNombre.setAttribute('name', 'Nombre');
+          inputNombre.value = `${datos.Nombre}`;
+          divNombre.appendChild(labelNombre);
+          divNombre.appendChild(inputNombre);
+          divNombre.appendChild(idHidden);
+
+          let divTipo = document.createElement('div');
+          divTipo.classList.add('mb-3');
+          let labelTipo = document.createElement('label');
+          labelTipo.classList.add('form-label');
+          labelTipo.textContent = 'Tipo';
+          let selectTipo = document.createElement('select');
+          selectTipo.classList.add('form-control');
+          selectTipo.setAttribute('name', 'ID_Tipo');
+          tiposCacheados.forEach(tipo => {
+            let option = document.createElement('option');
+            option.value = tipo.ID;
+            option.textContent = tipo.Tipo;
+            if (tipo.ID === datos.Tipo) {
+              option.selected = true;
+            }
+            selectTipo.appendChild(option);
+          });
+          divTipo.appendChild(labelTipo);
+          divTipo.appendChild(selectTipo);
+
+          let divPrecio = document.createElement('div');
+          divPrecio.classList.add('mb-3');
+          let labelPrecio = document.createElement('label');
+          labelPrecio.classList.add('form-label');
+          labelPrecio.textContent = 'Precio';
+          let inputPrecio = document.createElement('input');
+          inputPrecio.classList.add('form-control');
+          inputPrecio.setAttribute('type', 'number');
+          inputPrecio.setAttribute('name', 'Precio');
+          inputPrecio.value = `${datos.Precio}`;
+          divPrecio.appendChild(labelPrecio);
+          divPrecio.appendChild(inputPrecio);
+
+          let divCantidad = document.createElement('div');
+          divCantidad.classList.add('mb-3');
+          let labelCantidad = document.createElement('label');
+          labelCantidad.classList.add('form-label');
+          labelCantidad.textContent = 'Cantidad (Stock Web)';
+          let inputCantidad = document.createElement('input');
+          inputCantidad.classList.add('form-control');
+          inputCantidad.setAttribute('type', 'number');
+          inputCantidad.setAttribute('name', 'Cantidad');
+          inputCantidad.value = `${datos.Cantidad}`;
+          divCantidad.appendChild(labelCantidad);
+          divCantidad.appendChild(inputCantidad);
+
+          let divPeso = document.createElement('div');
+          divPeso.classList.add('mb-3');
+          let labelPeso = document.createElement('label');
+          labelPeso.classList.add('form-label');
+          labelPeso.textContent = 'Peso';
+          let inputPeso = document.createElement('input');
+          inputPeso.classList.add('form-control');
+          inputPeso.setAttribute('type', 'number');
+          inputPeso.setAttribute('name', 'Peso');
+          inputPeso.value = `${datos.Peso}`;
+          divPeso.appendChild(labelPeso);
+          divPeso.appendChild(inputPeso);
+
+          let divColor = document.createElement('div');
+          divColor.classList.add('mb-3');
+          let labelColor = document.createElement('label');
+          labelColor.classList.add('form-label');
+          labelColor.textContent = 'Color';
+          let inputColor = document.createElement('input');
+          inputColor.classList.add('form-control');
+          inputColor.setAttribute('type', 'text');
+          inputColor.setAttribute('name', 'Color');
+          inputColor.value = `${datos.Color}`;
+          divColor.appendChild(labelColor);
+          divColor.appendChild(inputColor);
+
+          let divGarantia = document.createElement('div');
+          divGarantia.classList.add('mb-3');
+          let labelGarantia = document.createElement('label');
+          labelGarantia.classList.add('form-label');
+          labelGarantia.textContent = 'Garantía (Meses)';
+          let inputGarantia = document.createElement('input');
+          inputGarantia.classList.add('form-control');
+          inputGarantia.setAttribute('type', 'number');
+          inputGarantia.setAttribute('name', 'Garantia');
+          inputGarantia.value = `${datos.Garantia}`;
+          divGarantia.appendChild(labelGarantia);
+          divGarantia.appendChild(inputGarantia);
+
+          let divModelo = document.createElement('div');
+          divModelo.classList.add('mb-3');
+          let labelModelo = document.createElement('label');
+          labelModelo.classList.add('form-label');
+          labelModelo.textContent = 'Modelo';
+          let inputModelo = document.createElement('input');
+          inputModelo.classList.add('form-control');
+          inputModelo.setAttribute('type', 'text');
+          inputModelo.setAttribute('name', 'Modelo');
+          inputModelo.value = `${datos.Modelo}`;
+          divModelo.appendChild(labelModelo);
+          divModelo.appendChild(inputModelo);
+
+          let divFile = document.createElement('div');
+          divFile.classList.add('mb-3');
+          let labelFile = document.createElement('label');
+          labelFile.classList.add('form-label');
+          labelFile.textContent = 'Imagen';
+
+          let inputFile = document.createElement('input');
+          inputFile.classList.add('form-control');
+          inputFile.setAttribute('type', 'file');
+          inputFile.setAttribute('name', 'Img');
+          
+          divFile.appendChild(labelFile);
+          divFile.appendChild(inputFile);
+
+
+
+
+
+
+          modalContent.appendChild(divNombre);
+          modalContent.appendChild(divTipo);
+          modalContent.appendChild(divPrecio);
+          modalContent.appendChild(divCantidad);
+          modalContent.appendChild(divPeso);
+          modalContent.appendChild(divColor);
+          modalContent.appendChild(divGarantia);
+          modalContent.appendChild(divModelo);
+          modalContent.appendChild(divFile);
+
+          form.appendChild(modalContent);
+          form.appendChild(modalFooter);
+          principalContainer.appendChild(form);
+
+          
+          document.getElementById('editarForm').addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const formData = new FormData(e.target);
+
+          try {
+            const response = await fetch('/api/actualizarProducto', {
+              method: 'POST',
+              body: formData
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+              alert(result.message);
+              $('#editarModal').modal('hide'); // Cerrar el modal si la actualización es exitosa
+              location.reload();
+            } else {
+              alert('Error al actualizar el producto: ' + result.error);
+            }
+          } catch (err) {
+            console.error('Error al enviar la solicitud:', err);
+            alert('Error al enviar la solicitud');
+          }
+        });
+
+        }
+
+
+
+
+
+
+        $(document).ready(async function () {
+          await obtenerProductos();
+        });
+
+        
+
+
+        async function eliminar(ID) {
+        try {
+            const response = await fetch('/api/eliminarProducto', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ ID })
+            });
+            const result = await response.json();
+            if (response.ok) {
+                alert(result.message);
+                window.location.reload()
+            } else {
+                alert('Error al eliminar el producto');
+            }
+        } catch (error) {
+            console.error('Error AKIKI:', error);
+        }
+        
+}
+
+
+
+
+
+      </script>
+
+
+</body>
+
+</html>

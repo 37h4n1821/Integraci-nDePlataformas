@@ -1,0 +1,168 @@
+<script>
+              function editarModal(datos){
+              let titulo = document.getElementById('modalTitulo');
+              
+              $('#editarModal').modal('show');
+
+              let principalContainer = document.getElementById('contenedorEditar');
+              principalContainer.innerHTML = ' ';
+              titulo.innerHTML = ' ';
+
+              let form = document.createElement('form');
+              form.setAttribute('id', 'editarForm');
+
+              let modal = document.createElement('div');
+              modal.setAttribute('id','editarModalContent')
+
+              let modalFooter = document.createElement('div');
+              modalFooter.classList.add('modal-footer');
+
+              let closeBtn = document.createElement('button');
+              closeBtn.setAttribute('type','button');
+              closeBtn.classList.add('btn','btn-secondary');
+              closeBtn.setAttribute('data-bs-dismiss','modal');
+              closeBtn.textContent = 'Cerrar';
+              let submitBtn = document.createElement('button');
+              submitBtn.setAttribute('type','submit');
+              submitBtn.classList.add('btn','btn-primary');
+              submitBtn.setAttribute('id','submitBtn');
+              submitBtn.textContent = 'Editar';
+
+              modalFooter.appendChild(closeBtn);
+              modalFooter.appendChild(submitBtn);
+
+
+
+              
+
+              titulo.textContent = `Editar Producto: ${datos.Nombre}`
+              let divNombre = document.createElement('div');
+              divNombre.classList.add('mb-3');
+              let labelNombre = document.createElement('label');
+              labelNombre.classList.add('form-label');
+              labelNombre.textContent = 'Nombre';
+              let inputNombre = document.createElement('input');
+              inputNombre.classList.add('form-control');
+              inputNombre.setAttribute('type','text');
+              inputNombre.value = `${datos.Nombre}`;
+              divNombre.appendChild(labelNombre);
+              divNombre.appendChild(inputNombre);
+
+              
+              let divTipo = document.createElement('div');
+              divTipo.classList.add('mb-3');
+              let labelTipo  = document.createElement('label');
+              labelTipo.classList.add('form-label');
+              labelTipo.textContent = 'Tipo';
+              let selectTipo = document.createElement('select');
+              selectTipo.classList.add('form-control');
+              tiposCacheados.forEach(tipo => {
+                let option = document.createElement('option');
+                option.value = tipo.ID;
+                option.textContent = tipo.Tipo;
+                if (tipo.ID === datos.Tipo) {
+                  option.selected = true;
+                }
+                selectTipo.appendChild(option);
+              });
+              divTipo.appendChild(labelTipo);
+              divTipo.appendChild(selectTipo);
+
+
+              let divPrecio = document.createElement('div');
+              divPrecio.classList.add('mb-3');
+              let labelPrecio = document.createElement('label');
+              labelPrecio.classList.add('form-label');
+              labelPrecio.textContent = 'Precio';
+              let inputPrecio = document.createElement('input');
+              inputPrecio.classList.add('form-control');
+              inputPrecio.setAttribute('type','number');
+              inputPrecio.value = `${datos.Precio}`;
+              divPrecio.appendChild(labelPrecio);
+              divPrecio.appendChild(inputPrecio);
+
+
+              let divCantidad = document.createElement('div');
+              divCantidad.classList.add('mb-3');
+              let labelCantidad = document.createElement('label');
+              labelCantidad.classList.add('form-label');
+              labelCantidad.textContent = 'Cantidad (Stock Web)';
+              let inputCantidad = document.createElement('input');
+              inputCantidad.classList.add('form-control');
+              inputCantidad.setAttribute('type','number');
+              inputCantidad.value = `${datos.Cantidad}`;
+              divCantidad.appendChild(labelCantidad);
+              divCantidad.appendChild(inputCantidad);
+
+
+
+              let divPeso = document.createElement('div');
+              divPeso.classList.add('mb-3');
+              let labelPeso = document.createElement('label');
+              labelPeso.classList.add('form-label');
+              labelPeso.textContent = 'Peso';
+              let inputPeso = document.createElement('input');
+              inputPeso.classList.add('form-control');
+              inputPeso.setAttribute('type','number');
+              inputPeso.value = `${datos.Peso}`;
+              divPeso.appendChild(labelPeso);
+              divPeso.appendChild(inputPeso);
+
+
+
+              let divColor = document.createElement('div');
+              divColor.classList.add('mb-3');
+              let labelColor = document.createElement('label');
+              labelColor.classList.add('form-label');
+              labelColor.textContent = 'Color';
+              let inputColor = document.createElement('input');
+              inputColor.classList.add('form-control');
+              inputColor.setAttribute('type','text');
+              inputColor.value = `${datos.Color}`;
+              divColor.appendChild(labelColor);
+              divColor.appendChild(inputColor);
+
+
+
+              let divGarantia = document.createElement('div');
+              divGarantia.classList.add('mb-3');
+              let labelGarantia = document.createElement('label');
+              labelGarantia.classList.add('form-label');
+              labelGarantia.textContent = 'Garantía (Meses)';
+              let inputGarantia = document.createElement('input');
+              inputGarantia.classList.add('form-control');
+              inputGarantia.setAttribute('type','text');
+              inputGarantia.value = `${datos.Garantia}`;
+              divGarantia.appendChild(labelGarantia);
+              divGarantia.appendChild(inputGarantia);
+
+
+
+              let divModelo = document.createElement('div');
+              divModelo.classList.add('mb-3');
+              let labelModelo = document.createElement('label');
+              labelModelo.classList.add('form-label');
+              labelModelo.textContent = 'Modelo';
+              let inputModelo = document.createElement('input');
+              inputModelo.classList.add('form-control');
+              inputModelo.setAttribute('type','text');              
+              inputModelo.value = `${datos.Modelo}`;
+              divModelo.appendChild(labelModelo);
+              divModelo.appendChild(inputModelo);
+
+              modal.appendChild(divNombre);
+              modal.appendChild(divTipo);
+              modal.appendChild(divPrecio);
+              modal.appendChild(divCantidad);
+              modal.appendChild(divColor);
+              modal.appendChild(divGarantia);
+              modal.appendChild(divModelo);
+
+
+              form.appendChild(modal);
+              form.appendChild(modalFooter);
+              principalContainer.appendChild(form);
+
+            }
+
+</script>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<%- include('../modulos/head.ejs'); %>
+<title>Ferremax - Pago</title>
+
+
+<link rel="stylesheet" href="css/orden.css">
+</head>
+<body>
+    <%- include('../modulos/navbar.ejs'); %>
+
+    <br>
+    <br>
+
+  <div class="container">
+<div class="customer_details orderList">
+             
+            </div> 
+            <div id="order_tab" class="orderCardWrap tab-content1 current">
+              <div class="orderCard">
+                <div class="orderHead">
+                  <ul class="orderLeft">
+                    <li>
+                    </li>
+                    <li>
+                    </li>                
+                  </ul>
+                  
+                    
+                  
+                </div>
+                <div class="itemDetails return">
+
+                    <h1 class="tituloSiRealizada">Transacción Realizada</h1>
+                    <p class="parrafoNoRealizada"><b>Muchas gracias por su preferencia </b>puedes seguir el estado de tu producto <span id="enlace"></span> </p>
+                    <p class="parrafoNoRealizada">Siempre puedes volver a revisar el estado de tus comprar entrando a la sección <b>Seguimiento</b></p>
+                    <p class="parrafoNoRealizada">¡Recuerda guardar tu número de compra! #<b id="norden"></b></p>
+                  
+                  
+                    
+                    
+                  <div class="btn_group" style="margin-top: 50px;">
+                    <button id="boletaBtn" class="buy_again" type="submit">Descargar Boleta</button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+
+           
+                
+                
+              
+            </div>
+           </div>
+          </div>
+
+
+          <%- include('../modulos/scripts.ejs');%>
+
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const carrito = JSON.parse(localStorage.getItem('carrito'));
+      const info = JSON.parse(localStorage.getItem('info'));
+      const despacho = 3500; // Supongamos que añades un costo de despacho de 3500
+      document.getElementById('norden').innerHTML = info.numeroOrden;
+      const contenedorSpan = document.getElementById('enlace') ;
+      const aEnlace = document.createElement('a');
+      aEnlace.setAttribute('href',`/orden/${info.numeroOrden}`)
+      aEnlace.innerHTML = 'aquí';
+      contenedorSpan.appendChild(aEnlace)
+
+      
+
+      const items = carrito.map(element => element.Nombre);
+      const precios = carrito.map(element => element.Precio);
+      const cantidades = carrito.map(element => element.Peso);
+      const fechaActual = info.fechaAct;
+      const fechaDespacho = info.fechaEntr;
+      const total = info.total;
+      const totaldespacho = info.total + despacho;
+      const numeroOrden = info.numeroOrden;
+
+      const data = {
+        numeroOrden,
+        items: JSON.stringify(items),
+        precios: JSON.stringify(precios),
+        cantidades: JSON.stringify(cantidades),
+        fechaActual,
+        fechaDespacho,
+        total,
+        totaldespacho
+      };
+
+      try {
+        const response = await fetch('/api/agregarOrden', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          console.log('Orden guardada exitosamente en la base de datos');
+        } else {
+          console.error('Error al guardar la orden en la base de datos');
+        }
+      } catch (error) {
+        console.error('Error en la solicitud:', error);
+      }
+    });
+
+    document.getElementById('boletaBtn').addEventListener('click', () => {
+      const carrito = JSON.parse(localStorage.getItem('carrito'));
+      const info = JSON.parse(localStorage.getItem('info'));
+      const despacho = 3500; // Supongamos que añades un costo de despacho de 3500
+
+      const items = carrito.map(element => element.Nombre);
+      const precios = carrito.map(element => element.Precio);
+      const cantidades = carrito.map(element => element.Peso);
+      const fechaActual = info.fechaAct;
+      const fechaDespacho = info.fechaEntr;
+      const total = info.total;
+      const totaldespacho = info.total + despacho;
+      const numeroOrden = info.numeroOrden;
+
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      let y = 10;
+
+      // Encabezado FERREMAX
+      doc.setFontSize(30);
+      doc.setFont("helvetica", "bold");
+      doc.text('FERREMAX', 10, y);
+      y += 20;
+
+      // Título
+      doc.setFontSize(18);
+      doc.text('Boleta de Compra', 10, y);
+      y += 10;
+
+      // Información de la orden
+      doc.setFontSize(12);
+      doc.text(`Número de Orden: ${numeroOrden}`, 10, y);
+      y += 10;
+      doc.text(`Fecha de Pedido: ${fechaActual}`, 10, y);
+      y += 10;
+      doc.text(`Fecha de Entrega: ${fechaDespacho}`, 10, y);
+      y += 10;
+      doc.text(`SubTotal: $${total.toLocaleString('es-CL')}`, 10, y);
+      y += 10;
+      doc.text(`Total: $${totaldespacho.toLocaleString('es-CL')}`, 10, y);
+      y += 20;
+
+      // Detalles del carrito
+      items.forEach((item, index) => {
+        doc.text(`Producto ${index + 1}: ${item}`, 10, y);
+        y += 10;
+
+        if (cantidades[index] > 1) {
+          doc.text(`Precio Unitario: $${precios[index].toLocaleString('es-CL')}`, 10, y);
+          y += 10;
+          const precioTotal = precios[index] * cantidades[index];
+          doc.text(`Precio Total: $${precioTotal.toLocaleString('es-CL')}`, 10, y);
+        } else {
+          doc.text(`Precio: $${precios[index].toLocaleString('es-CL')}`, 10, y);
+        }
+
+        y += 10;
+        doc.text(`Cantidad: ${cantidades[index]}`, 10, y);
+        y += 20;
+      });
+
+      doc.save('boleta.pdf');
+    });
+  </script>
+
+  </html>

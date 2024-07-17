@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <%- include('../modulos/head.ejs'); %>
+
+    <title>Ferremax - Productos</title>
+
+  </head>
+
+<body>
+
+
+  
+
+
+  <%- include('../modulos/navbar.ejs'); %>
+
+
+    <div class="section properties">
+      <div class="container">
+        <ul class="properties-filter">
+          <li><a class="is_active" href="#!" onclick="obtenerProductos('/api/productos')">Mostrar Todo</a></li>
+          <li><a href="#!" onclick="obtenerProductos('/api/productos/?Tipo=Herramientas%20Manuales')">Herramientas Manuales</a></li>
+          <li><a href="#!" onclick="obtenerProductos('/api/productos/?Tipo=Materiales%20Básicos')">Materiales Básicos</a></li>
+          <li><a href="#!" onclick="obtenerProductos('/api/productos/?Tipo=Equipos%20de%20Seguridad')">Equipos de Seguridad</a></li>
+
+        </ul>
+
+      
+
+      <div class="row properties-box" id="product-container">
+        
+    </div>
+  </div>
+
+
+  <%-include('../modulos/carrito.ejs') ;%>
+
+
+  <%- include('../modulos/modales.ejs');%>
+  <%- include('../modulos/scripts.ejs');%>
+
+
+  <script>
+
+
+async function obtenerProductos (url='/api/productos') {
+            try {
+                const response = await fetch(url);
+                const result = await response.json();
+                console.log(result);
+                const productContainer = document.getElementById('product-container');
+
+          
+  
+          productContainer.innerHTML = '';
+
+          let row; 
+
+
+          result.forEach((product,index) => {
+            if (index % 3 === 0) {
+              row = document.createElement('div');
+              row.classList.add('row');
+              productContainer.appendChild(row);
+            }
+            
+            
+            const col = document.createElement('div');
+            col.classList.add('col-lg-4', 'col-md-6');
+            
+            const item = document.createElement('div');
+            item.classList.add('item');
+            
+            const link = document.createElement('a');
+            link.href = "#"; 
+            const img = document.createElement('img');
+              if (product.Img) {
+                img.src = `data:image/jpeg;base64,${product.Img}`;
+              } else {
+                img.src = '/assets/img/taladro2.jpg'; // Imagen estática en caso de no tener imagen en el producto
+              }
+              img.alt = "";
+              link.appendChild(img);
+            
+            const category = document.createElement('span');
+            category.classList.add('category');
+            category.textContent = product.Tipo; 
+            
+            const price = document.createElement('h6');
+             const priceDolar = document.createElement('p');
+            priceDolar.classList.add('precioDolar')
+            price.textContent = `$${product.Precio}`; 
+            priceDolar.textContent = ` $${Number((product.Precio/product.CMF.Dolar).toFixed(2))} USD`;
+            const title = document.createElement('h4');
+            const titleLink = document.createElement('a');
+            titleLink.href = "property-details.html"; 
+            titleLink.textContent = product.Nombre; 
+            title.appendChild(titleLink);
+            
+            const ul = document.createElement('ul');
+            
+            const liRooms = document.createElement('li');
+            liRooms.textContent = `Stock: ${product.Cantidad}`; 
+            ul.appendChild(liRooms);
+            
+            const liBathrooms = document.createElement('li');
+            liBathrooms.textContent = `Color: ${product.Color}`; 
+            ul.appendChild(liBathrooms);
+            
+            const liArea = document.createElement('li');
+            liArea.textContent = `Modelo: ${product.Modelo}`;
+            ul.appendChild(liArea);
+            
+            const liFloors = document.createElement('li');
+            liFloors.textContent = `Garantía: ${product.Garantia} Meses`; 
+            ul.appendChild(liFloors);
+            
+            const liParking = document.createElement('li');
+            liParking.textContent = `Peso: ${product.Peso} KG`; 
+            ul.appendChild(liParking);
+            
+            const mainButton = document.createElement('div');
+            mainButton.classList.add('main-button');
+            const buttonLink = document.createElement('a');
+            buttonLink.href = "#";
+            buttonLink.textContent = "Agregar a tu carrito";
+            let enviar =JSON.stringify(product)
+            buttonLink.setAttribute('onclick',`agregarAlCarrito(${enviar})`);
+            mainButton.appendChild(buttonLink);
+            
+        
+            item.appendChild(link);
+            item.appendChild(category);
+            item.appendChild(price);
+            item.appendChild(priceDolar);
+            item.appendChild(title);
+            item.appendChild(ul);
+            item.appendChild(mainButton);
+            col.appendChild(item);
+            row.appendChild(col);
+            productContainer.appendChild(row);
+          });
+
+            } catch (err) {
+                console.log(err);
+            }
+        }
+
+        $(document).ready(async function() {
+          await obtenerProductos();
+         });
+
+  
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<div class="modal" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 id="modalTitulo" class="modal-title"></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+
+          <div id="contenedorEditar">
+
+            <form id="editarForm">
+              <div id="editarModalContent" class="modal-body">
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="submit" id="submitBtn" class="btn btn-primary">Editar</button>
+              </div>
+          </form>
+
+          </div>
+
+          
+          
+
+
+      </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="crearModal" tabindex="-1" aria-labelledby="crearModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="crearModalLabel">Crear Producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="crearForm">
+        <div class="modal-body" id="crearModalContent">
+          <div class="mb-3">
+            <label for="nombreInput" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombreInput" name="Nombre">
+          </div>
+          
+          <div class="mb-3">
+            <label for="tipoInput" class="form-label">Tipo</label>
+              <select class="form-select" id="tipoInput" name="tipoInput" required>
+                <option value="" disabled selected>Seleccione una opción</option>
+                <% tipos.forEach(function(result) { %>
+                    <option value="<%= result.ID %>"><%= result.Tipo %></option>
+                <% }); %>
+            </select>
+              
+            </select>          
+          </div>
+          <div class="mb-3">
+            <label for="precioInput" class="form-label">Precio</label>
+            <input type="number" class="form-control" id="precioInput" name="Precio">
+          </div>
+          <div class="mb-3">
+            <label for="cantidadInput" class="form-label">Cantidad (Stock Web)</label>
+            <input type="number" class="form-control" id="cantidadInput" name="Cantidad">
+          </div>
+          <div class="mb-3">
+            <label for="pesoInput" class="form-label">Peso (KG)</label>
+            <input type="number" class="form-control" id="pesoInput" name="Peso">
+          </div>
+          <div class="mb-3">
+            <label for="colorInput" class="form-label">Color</label>
+            <input type="text" class="form-control" id="colorInput" name="Color">
+          </div>
+          <div class="mb-3">
+            <label for="garantiaInput" class="form-label">Garantía (Meses)</label>
+            <input type="number" class="form-control" id="garantiaInput" name="Garantia">
+          </div>
+          <div class="mb-3">
+            <label for="modeloInput" class="form-label">Modelo</label>
+            <input type="text" class="form-control" id="modeloInput" name="Modelo">
+          </div>
+          <div class="mb-3">
+            <label for="modeloInput" class="form-label">Imagen</label>
+            <input type="file" class="form-control" accept="image/*" id="fileInput" name="Img">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" id="submitCrearBtn" class="btn btn-primary">Crear</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

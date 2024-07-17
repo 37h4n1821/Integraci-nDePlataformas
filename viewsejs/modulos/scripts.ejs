@@ -1,0 +1,49 @@
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+
+
+<script>
+function openCartModal() {
+    $('#cartModal').modal('show');
+  }
+
+  function seguirOrden() {
+      const numeroOrden = prompt("Ingrese su número de orden:");
+      if (numeroOrden) {
+        window.location.href = `/orden/${numeroOrden}`;
+      }
+    }
+
+async function obtenerCMF() {
+  try {
+      const response = await fetch('/api/obtenerCMF');
+      const mensaje = await response.json();
+      console.log(mensaje);
+      var texto="-                Dolar: $"+mensaje.Dolar+" CLP      -           Euro: $"+mensaje.EUR+" CLP          -         UF: $"+mensaje.UF+" CLP";
+      console.log(texto);
+      document.getElementById("barraQueSeMueve").innerHTML=texto;
+  }catch (e){
+    console.log(e);
+  }
+}
+
+async function obtenerClima() {
+  try {
+      const response = await fetch('/api/obtenerClima');
+      const weather = await response.json();
+      console.log(weather);
+      document.getElementById("weather-info").innerHTML=weather.main.temp+' °C, '+weather.weather[0].description;
+  }catch (e){
+    console.log(e);
+  }
+}
+
+obtenerCMF();
+obtenerClima();
+
+
+const socket = io();
+
+</script>
+

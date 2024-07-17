@@ -1,0 +1,34 @@
+.contenedorOrden{
+    border: 1px solid rgba(0, 0, 0, 0.158);
+    margin-top: 20px;
+    box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 3px;
+    width: 40px;
+}
+
+.main-container .row{
+    margin-left: 20px;
+}
+
+.detallesBtn {
+    display: block; /* Para centrar el botón con margin */
+    width: 150px; /* Ancho del botón */
+    padding: 10px 20px; /* Espaciado interno */
+    margin: 20px auto; /* Margen superior/inferior y centrado horizontal */
+    background-color: #007BFF; /* Color de fondo azul */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Fuente en negrita */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer; /* Cursor de puntero */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para un efecto moderno */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+  }
+  
+  .detallesBtn:hover {
+    background-color: #0056b3; /* Color de fondo más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación */
+  }

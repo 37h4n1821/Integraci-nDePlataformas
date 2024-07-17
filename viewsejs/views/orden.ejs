@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<%- include('../modulos/head.ejs'); %>
+<title>Ferremax - Pago</title>
+
+
+<link rel="stylesheet" href="css/orden.css">
+</head>
+<body>
+    <%- include('../modulos/navbar.ejs'); %>
+
+    <br>
+    <br>
+
+  <div class="container">
+<div class="customer_details orderList">
+             
+            </div> 
+            <div id="order_tab" class="orderCardWrap tab-content1 current">
+              <div class="orderCard">
+                <div class="orderHead">
+                  <ul class="orderLeft">
+                    <li>
+                      <p>PEDIDO REALIZADO <span id="fechaPedido"></span></p>
+                    </li>
+                    <li>
+                      <p>SUB-TOTAL <span id="total"></span></p>
+                    </li>                
+                    <li>
+                      <p>TOTAL <span id="totalExtra"></span></p>
+                    </li>                
+                  </ul>
+                  
+                    
+                  
+                </div>
+                <form action="<%= url %>" method="POST">
+                <div class="itemDetails">
+                  <h3>Entrega Estimada <span id="fechaEntrega"></span></h3>
+                  <p id="ordenGenerada">ORDEN # </p>
+                  <p>ENVIO $ 3500</p>
+                  <p></p>
+                  <div id="itemInfo" class="itemInfo">
+                  
+                    
+                    
+                  </div>
+                  <div class="btn_group" style="margin-top: 50px;">
+                    <input type="hidden" name="token_ws" value="<%= token %>">
+                    <button id="pagarBtn" class="buy_again" type="submit">Proceder al pago</button>
+                    <button  class="gift_btn" ><a href="/">Vaciar carrito</a></button>
+
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+
+           
+                
+                
+              
+            </div>
+           </div>
+          </div>
+
+
+          <%- include('../modulos/scripts.ejs');%>
+
+  </body>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Obtener la fecha actual
+      const fechaActual = new Date();
+      
+      // Formatear la fecha actual en el formato deseado
+      const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
+      const fechaPedido = fechaActual.toLocaleDateString('es-ES', opcionesFecha);
+
+      // Calcular la fecha de entrega (tres días después de la fecha actual)
+      const fechaEntrega = new Date(fechaActual);
+      fechaEntrega.setDate(fechaEntrega.getDate() + 3);
+      const fechaEntregaFormateada = fechaEntrega.toLocaleDateString('es-ES', opcionesFecha);
+
+      // Actualizar el contenido de los elementos HTML
+      document.getElementById('fechaPedido').textContent = fechaPedido;
+      document.getElementById('fechaEntrega').textContent = fechaEntregaFormateada;
+
+      const numeroOrden = generarNumeroOrden();
+      document.getElementById('ordenGenerada').textContent += numeroOrden;
+
+      let info = {
+        total: total,
+        fechaAct: fechaPedido,
+        fechaEntr: fechaEntregaFormateada,
+        numeroOrden: numeroOrden
+      }
+
+      localStorage.setItem('info', JSON.stringify(info));
+
+    });
+
+    let objeto = {}
+    let total = 0;
+    const carrito = localStorage.getItem('carrito');
+    if (carrito) {
+       objeto = JSON.parse(carrito);
+      
+    }
+
+    function productos(objeto) {
+      let contenedorPrincipal = document.getElementById('itemInfo');
+      let totaldd = 0; 
+
+      objeto.forEach(element => {
+        let divItem = document.createElement('div');
+        divItem.classList.add('item');
+
+        let imgItem = document.createElement('img');
+        if (element.Img === null) {
+          imgItem.setAttribute('src', '/assets/img/taladro2.jpg');
+        } else {
+          imgItem.setAttribute('src', `data:image/jpeg;base64,${element.Img}`);
+        }
+
+        let divDetalles = document.createElement('div');
+        divDetalles.classList.add('details');
+
+        let tituloDetalles = document.createElement('h6');
+        tituloDetalles.textContent = element.Nombre;
+
+        let cantidadDetalles = document.createElement('p');
+        cantidadDetalles.textContent = 'Cantidad: ' + element.Peso;
+
+        let precioDetalles = document.createElement('p');
+        precioDetalles.textContent = 'C/U: ' + element.Precio;
+
+        let precioTotalDetalles = document.createElement('p');
+        precioTotalDetalles.textContent = 'Total: ' + (element.Precio * element.Peso);
+
+        totaldd += element.Precio * element.Peso; 
+
+        divDetalles.appendChild(tituloDetalles);
+        divDetalles.appendChild(cantidadDetalles);
+        divDetalles.appendChild(precioDetalles);
+        divDetalles.appendChild(precioTotalDetalles);
+
+        divItem.appendChild(imgItem);
+        divItem.appendChild(divDetalles);
+
+        contenedorPrincipal.appendChild(divItem);
+      });
+
+      total= totaldd
+      document.getElementById('total').innerText = '$' + total; 
+
+      const extraCharge = 3500;
+      const totalWithExtra = total + extraCharge;
+      document.getElementById('totalExtra').innerText = '$' + totalWithExtra; 
+      
+   
+
+    }
+
+
+
+    function generarNumeroOrden() {
+          const segmento1 = Math.floor(Math.random() * 900) + 100; 
+          const segmento2 = Math.floor(Math.random() * 9000) + 1000; 
+          const segmento3 = Math.floor(Math.random() * 90000) + 10000; 
+
+          return `${segmento1}-${segmento2}-${segmento3}`;
+        }
+
+
+
+        
+
+
+
+        
+   
+
+    generarNumeroOrden();
+    productos(objeto);
+
+  </script>
+  </html>

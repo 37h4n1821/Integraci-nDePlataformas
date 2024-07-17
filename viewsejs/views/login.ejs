@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <title>Ferremax</title>
+        <link rel="stylesheet" href="css/login.css">
+
+</head>
+
+<body>
+
+    <div id="background">
+        <div id="startpage">
+            <span id="header">Iniciar sesión</span>
+            <br>
+            <br>
+            <input type="input" id="inituser" placeholder="Usuario" class="input">
+            <br>
+            <br>
+            <input type="password" id="initpass" placeholder="Contraseña" class="input">
+            <br>
+            <br>
+            <br>
+            <button onclick="signin()" id="button" class="enterbtn">Ingresar</button>
+            <br>
+            <br>
+            <div id="buttons">
+                <button onclick="showStuff()" id="show_button" class="btn">Mostrar Contraseña</button>
+            </div>
+            <br>
+            <span id="status"></span>
+            <br>
+        </div>
+
+        <div id="container">
+            <span id="header">Login</span>
+            <br>
+            <br>
+            <input type="input" id="user" placeholder="" class="input">
+            <br>
+            <br>
+            <input type="password" id="pass" placeholder="" class="input">
+            <br>
+            <br>
+            <br>
+            <button onclick="check()" id="button" class="enterbtn">Continue</button>
+            <br>
+            <br>
+            <div id="buttons">
+                <button onclick="showStuff()" id="show_button" class="btn">Show Password</button>
+                <button onclick="resettrys()" id="enter_button" class="btn">Reset</button>
+            </div>
+            <br>
+            <span id="status"></span>
+            <br>
+        </div>
+
+     
+    </div>
+
+
+
+    
+
+
+
+</body>
+
+<script>
+    let initpass = document.getElementById("initpass");
+let inituser = document.getElementById("inituser");
+let startpage = document.getElementById("startpage");
+let container = document.getElementById("container");
+let status = document.getElementById("status");
+let contents = document.getElementById("pass");
+let usercontents = document.getElementById("user");
+var l = 0;
+var show = true;
+var show_button = document.getElementById("show_button");
+var background = document.getElementById("background");
+var mockPage = document.getElementById("page");
+
+console.clear();
+
+//window.onload = () => {};
+
+
+function showStuff() {
+  if (show) {
+    contents.type = "input";
+    initpass.type = "input";
+    show_button.innerHTML = "Mostrar Contraseña";
+    show = false;
+  } else {
+    initpass.type = "password";
+    contents.type = "password";
+    show_button.innerHTML = "Ocultar Contraseña";
+    show = true;
+  }
+}
+
+
+
+
+</script>
+
+</html>

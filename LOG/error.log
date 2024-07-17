@@ -1,0 +1,618 @@
+2024-07-02 18:13:46: SyntaxError: Unexpected token ')'
+2024-07-02 18:13:46:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:167:18)
+2024-07-02 18:13:46:     at callTranslator (node:internal/modules/esm/loader:285:14)
+2024-07-02 18:13:46:     at ModuleLoader.moduleProvider (node:internal/modules/esm/loader:291:30)
+2024-07-02 18:13:46:     at async link (node:internal/modules/esm/module_job:76:21)
+2024-07-02 18:14:49: SyntaxError: Unexpected token ')'
+2024-07-02 18:14:49:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:167:18)
+2024-07-02 18:14:49:     at callTranslator (node:internal/modules/esm/loader:285:14)
+2024-07-02 18:14:49:     at ModuleLoader.moduleProvider (node:internal/modules/esm/loader:291:30)
+2024-07-02 18:14:49:     at async link (node:internal/modules/esm/module_job:76:21)
+2024-07-02 18:34:41: SyntaxError: Missing catch or finally after try
+2024-07-02 18:34:41:     at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:167:18)
+2024-07-02 18:34:41:     at callTranslator (node:internal/modules/esm/loader:285:14)
+2024-07-02 18:34:41:     at ModuleLoader.moduleProvider (node:internal/modules/esm/loader:291:30)
+2024-07-02 18:34:41:     at async link (node:internal/modules/esm/module_job:76:21)
+2024-07-02 18:37:15: ReferenceError: /todo/proyectos/duoc/Integracion/viewsejs/views/dashboard.ejs:60
+2024-07-02 18:37:15:     58|   </body>
+2024-07-02 18:37:15:     59| 
+2024-07-02 18:37:15:  >> 60|   <%- include('../modulos/crearModal.ejs');%>
+2024-07-02 18:37:15:     61| 
+2024-07-02 18:37:15:     62| 
+2024-07-02 18:37:15:     63| 
+2024-07-02 18:37:15: 
+2024-07-02 18:37:15: /todo/proyectos/duoc/Integracion/viewsejs/modulos/crearModal.ejs:51
+2024-07-02 18:37:15:     49|               <select class="form-select" id="tipoInput" name="Tipo" required>
+2024-07-02 18:37:15:     50|                 <option value="" disabled selected>Seleccione una opción</option>
+2024-07-02 18:37:15:  >> 51|                 <% results.forEach(function(result) { %>
+2024-07-02 18:37:15:     52|                     <option value="<%= result.ID %>"><%= result.Tipo %></option>
+2024-07-02 18:37:15:     53|                 <% }); %>
+2024-07-02 18:37:15:     54|             </select>
+2024-07-02 18:37:15: 
+2024-07-02 18:37:15: results is not defined
+2024-07-02 18:37:15:     at eval ("/todo/proyectos/duoc/Integracion/viewsejs/modulos/crearModal.ejs":12:8)
+2024-07-02 18:37:15:     at crearModal (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:703:17)
+2024-07-02 18:37:15:     at include (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:701:39)
+2024-07-02 18:37:15:     at eval ("/todo/proyectos/duoc/Integracion/viewsejs/views/dashboard.ejs":15:17)
+2024-07-02 18:37:15:     at dashboard (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:703:17)
+2024-07-02 18:37:15:     at tryHandleCache (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:274:36)
+2024-07-02 18:37:15:     at exports.renderFile [as engine] (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:491:10)
+2024-07-02 18:37:15:     at View.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/view.js:135:8)
+2024-07-02 18:37:15:     at tryRender (/todo/proyectos/duoc/Integracion/node_modules/express/lib/application.js:657:10)
+2024-07-02 18:37:15:     at Function.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/application.js:609:3)
+2024-07-02 18:53:56: ReferenceError: document is not defined
+2024-07-02 18:53:56:     at file:///todo/proyectos/duoc/Integracion/server.mjs:203:1
+2024-07-02 18:53:56:     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-07-02 18:56:36: Error: Column 'ID_Tipo' cannot be null
+2024-07-02 18:56:36:     at PromisePool.query (/todo/proyectos/duoc/Integracion/node_modules/mysql2/promise.js:356:22)
+2024-07-02 18:56:36:     at file:///todo/proyectos/duoc/Integracion/server.mjs:240:24
+2024-07-02 18:56:36:     at Layer.handle [as handle_request] (/todo/proyectos/duoc/Integracion/node_modules/express/lib/router/layer.js:95:5)
+2024-07-02 18:56:36:     at next (/todo/proyectos/duoc/Integracion/node_modules/express/lib/router/route.js:149:13)
+2024-07-02 18:56:36:     at done (/todo/proyectos/duoc/Integracion/node_modules/multer/lib/make-middleware.js:45:7)
+2024-07-02 18:56:36:     at indicateDone (/todo/proyectos/duoc/Integracion/node_modules/multer/lib/make-middleware.js:49:68)
+2024-07-02 18:56:36:     at Multipart.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/multer/lib/make-middleware.js:166:7)
+2024-07-02 18:56:36:     at Multipart.emit (node:events:518:28)
+2024-07-02 18:56:36:     at emitCloseNT (node:internal/streams/destroy:147:10)
+2024-07-02 18:56:36:     at process.processTicksAndRejections (node:internal/process/task_queues:81:21) {
+2024-07-02 18:56:36:   code: 'ER_BAD_NULL_ERROR',
+2024-07-02 18:56:36:   errno: 1048,
+2024-07-02 18:56:36:   sql: '\n' +
+2024-07-02 18:56:36:     '      UPDATE productos\n' +
+2024-07-02 18:56:36:     '      SET \n' +
+2024-07-02 18:56:36:     "        Nombre = 'fdff', \n" +
+2024-07-02 18:56:36:     '        ID_Tipo = NULL, \n' +
+2024-07-02 18:56:36:     "        Precio = '2323', \n" +
+2024-07-02 18:56:36:     "        Cantidad = '3434', \n" +
+2024-07-02 18:56:36:     "        Peso = '334', \n" +
+2024-07-02 18:56:36:     "        Color = '3434', \n" +
+2024-07-02 18:56:36:     "        Garantia = '343', \n" +
+2024-07-02 18:56:36:     "        Modelo = '3434'\n" +
+2024-07-02 18:56:36:     "      WHERE ID = '10'",
+2024-07-02 18:56:36:   sqlState: '23000',
+2024-07-02 18:56:36:   sqlMessage: "Column 'ID_Tipo' cannot be null"
+2024-07-02 18:56:36: }
+2024-07-02 18:57:56: MulterError: Unexpected field
+2024-07-02 18:57:56:     at wrappedFileFilter (/todo/proyectos/duoc/Integracion/node_modules/multer/index.js:40:19)
+2024-07-02 18:57:56:     at Multipart.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/multer/lib/make-middleware.js:107:7)
+2024-07-02 18:57:56:     at Multipart.emit (node:events:518:28)
+2024-07-02 18:57:56:     at HeaderParser.cb (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:358:14)
+2024-07-02 18:57:56:     at HeaderParser.push (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:162:20)
+2024-07-02 18:57:56:     at SBMH.ssCb [as _cb] (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:394:37)
+2024-07-02 18:57:56:     at feed (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:219:14)
+2024-07-02 18:57:56:     at SBMH.push (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:104:16)
+2024-07-02 18:57:56:     at Multipart._write (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:567:19)
+2024-07-02 18:57:56:     at writeOrBuffer (node:internal/streams/writable:564:12)
+2024-07-02 18:58:27: MulterError: Unexpected field
+2024-07-02 18:58:27:     at wrappedFileFilter (/todo/proyectos/duoc/Integracion/node_modules/multer/index.js:40:19)
+2024-07-02 18:58:27:     at Multipart.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/multer/lib/make-middleware.js:107:7)
+2024-07-02 18:58:27:     at Multipart.emit (node:events:518:28)
+2024-07-02 18:58:27:     at HeaderParser.cb (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:358:14)
+2024-07-02 18:58:27:     at HeaderParser.push (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:162:20)
+2024-07-02 18:58:27:     at SBMH.ssCb [as _cb] (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:394:37)
+2024-07-02 18:58:27:     at feed (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:248:10)
+2024-07-02 18:58:27:     at SBMH.push (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:104:16)
+2024-07-02 18:58:27:     at Multipart._write (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:567:19)
+2024-07-02 18:58:27:     at writeOrBuffer (node:internal/streams/writable:564:12)
+2024-07-02 18:58:54: MulterError: Unexpected field
+2024-07-02 18:58:54:     at wrappedFileFilter (/todo/proyectos/duoc/Integracion/node_modules/multer/index.js:40:19)
+2024-07-02 18:58:54:     at Multipart.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/multer/lib/make-middleware.js:107:7)
+2024-07-02 18:58:54:     at Multipart.emit (node:events:518:28)
+2024-07-02 18:58:54:     at HeaderParser.cb (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:358:14)
+2024-07-02 18:58:54:     at HeaderParser.push (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:162:20)
+2024-07-02 18:58:54:     at SBMH.ssCb [as _cb] (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:394:37)
+2024-07-02 18:58:54:     at feed (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:248:10)
+2024-07-02 18:58:54:     at SBMH.push (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:104:16)
+2024-07-02 18:58:54:     at Multipart._write (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:567:19)
+2024-07-02 18:58:54:     at writeOrBuffer (node:internal/streams/writable:564:12)
+2024-07-02 18:59:09: MulterError: Unexpected field
+2024-07-02 18:59:09:     at wrappedFileFilter (/todo/proyectos/duoc/Integracion/node_modules/multer/index.js:40:19)
+2024-07-02 18:59:09:     at Multipart.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/multer/lib/make-middleware.js:107:7)
+2024-07-02 18:59:09:     at Multipart.emit (node:events:518:28)
+2024-07-02 18:59:09:     at HeaderParser.cb (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:358:14)
+2024-07-02 18:59:09:     at HeaderParser.push (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:162:20)
+2024-07-02 18:59:09:     at SBMH.ssCb [as _cb] (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:394:37)
+2024-07-02 18:59:09:     at feed (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:248:10)
+2024-07-02 18:59:09:     at SBMH.push (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:104:16)
+2024-07-02 18:59:09:     at Multipart._write (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:567:19)
+2024-07-02 18:59:09:     at writeOrBuffer (node:internal/streams/writable:564:12)
+2024-07-02 18:59:46: MulterError: Unexpected field
+2024-07-02 18:59:46:     at wrappedFileFilter (/todo/proyectos/duoc/Integracion/node_modules/multer/index.js:40:19)
+2024-07-02 18:59:46:     at Multipart.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/multer/lib/make-middleware.js:107:7)
+2024-07-02 18:59:46:     at Multipart.emit (node:events:518:28)
+2024-07-02 18:59:46:     at HeaderParser.cb (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:358:14)
+2024-07-02 18:59:46:     at HeaderParser.push (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:162:20)
+2024-07-02 18:59:46:     at SBMH.ssCb [as _cb] (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:394:37)
+2024-07-02 18:59:46:     at feed (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:219:14)
+2024-07-02 18:59:46:     at SBMH.push (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:104:16)
+2024-07-02 18:59:46:     at Multipart._write (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:567:19)
+2024-07-02 18:59:46:     at writeOrBuffer (node:internal/streams/writable:564:12)
+2024-07-02 19:00:06: MulterError: Unexpected field
+2024-07-02 19:00:06:     at wrappedFileFilter (/todo/proyectos/duoc/Integracion/node_modules/multer/index.js:40:19)
+2024-07-02 19:00:06:     at Multipart.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/multer/lib/make-middleware.js:107:7)
+2024-07-02 19:00:06:     at Multipart.emit (node:events:518:28)
+2024-07-02 19:00:06:     at HeaderParser.cb (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:358:14)
+2024-07-02 19:00:06:     at HeaderParser.push (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:162:20)
+2024-07-02 19:00:06:     at SBMH.ssCb [as _cb] (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:394:37)
+2024-07-02 19:00:06:     at feed (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:219:14)
+2024-07-02 19:00:06:     at SBMH.push (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:104:16)
+2024-07-02 19:00:06:     at Multipart._write (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:567:19)
+2024-07-02 19:00:06:     at writeOrBuffer (node:internal/streams/writable:564:12)
+2024-07-02 19:02:27: MulterError: Unexpected field
+2024-07-02 19:02:27:     at wrappedFileFilter (/todo/proyectos/duoc/Integracion/node_modules/multer/index.js:40:19)
+2024-07-02 19:02:27:     at Multipart.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/multer/lib/make-middleware.js:107:7)
+2024-07-02 19:02:27:     at Multipart.emit (node:events:518:28)
+2024-07-02 19:02:27:     at HeaderParser.cb (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:358:14)
+2024-07-02 19:02:27:     at HeaderParser.push (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:162:20)
+2024-07-02 19:02:27:     at SBMH.ssCb [as _cb] (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:394:37)
+2024-07-02 19:02:27:     at feed (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:248:10)
+2024-07-02 19:02:27:     at SBMH.push (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:104:16)
+2024-07-02 19:02:27:     at Multipart._write (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:567:19)
+2024-07-02 19:02:27:     at writeOrBuffer (node:internal/streams/writable:564:12)
+2024-07-02 19:04:39: MulterError: Unexpected field
+2024-07-02 19:04:39:     at wrappedFileFilter (/todo/proyectos/duoc/Integracion/node_modules/multer/index.js:40:19)
+2024-07-02 19:04:39:     at Multipart.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/multer/lib/make-middleware.js:107:7)
+2024-07-02 19:04:39:     at Multipart.emit (node:events:518:28)
+2024-07-02 19:04:39:     at HeaderParser.cb (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:358:14)
+2024-07-02 19:04:39:     at HeaderParser.push (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:162:20)
+2024-07-02 19:04:39:     at SBMH.ssCb [as _cb] (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:394:37)
+2024-07-02 19:04:39:     at feed (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:248:10)
+2024-07-02 19:04:39:     at SBMH.push (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:104:16)
+2024-07-02 19:04:39:     at Multipart._write (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:567:19)
+2024-07-02 19:04:39:     at writeOrBuffer (node:internal/streams/writable:564:12)
+2024-07-02 19:07:06: MulterError: Unexpected field
+2024-07-02 19:07:06:     at wrappedFileFilter (/todo/proyectos/duoc/Integracion/node_modules/multer/index.js:40:19)
+2024-07-02 19:07:06:     at Multipart.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/multer/lib/make-middleware.js:107:7)
+2024-07-02 19:07:06:     at Multipart.emit (node:events:518:28)
+2024-07-02 19:07:06:     at HeaderParser.cb (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:358:14)
+2024-07-02 19:07:06:     at HeaderParser.push (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:162:20)
+2024-07-02 19:07:06:     at SBMH.ssCb [as _cb] (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:394:37)
+2024-07-02 19:07:06:     at feed (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:248:10)
+2024-07-02 19:07:06:     at SBMH.push (/todo/proyectos/duoc/Integracion/node_modules/streamsearch/lib/sbmh.js:104:16)
+2024-07-02 19:07:06:     at Multipart._write (/todo/proyectos/duoc/Integracion/node_modules/busboy/lib/types/multipart.js:567:19)
+2024-07-02 19:07:06:     at writeOrBuffer (node:internal/streams/writable:564:12)
+2024-07-02 19:18:36: Error al enviar el correo: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+2024-07-02 19:18:36: 535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-708043b710fsm8885639b3a.156 - gsmtp
+2024-07-02 19:18:36:     at SMTPConnection._formatError (/todo/proyectos/duoc/Integracion/node_modules/nodemailer/lib/smtp-connection/index.js:798:19)
+2024-07-02 19:18:36:     at SMTPConnection._actionAUTHComplete (/todo/proyectos/duoc/Integracion/node_modules/nodemailer/lib/smtp-connection/index.js:1577:34)
+2024-07-02 19:18:36:     at SMTPConnection.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/nodemailer/lib/smtp-connection/index.js:554:26)
+2024-07-02 19:18:36:     at SMTPConnection._processResponse (/todo/proyectos/duoc/Integracion/node_modules/nodemailer/lib/smtp-connection/index.js:982:20)
+2024-07-02 19:18:36:     at SMTPConnection._onData (/todo/proyectos/duoc/Integracion/node_modules/nodemailer/lib/smtp-connection/index.js:763:14)
+2024-07-02 19:18:36:     at SMTPConnection._onSocketData (/todo/proyectos/duoc/Integracion/node_modules/nodemailer/lib/smtp-connection/index.js:195:44)
+2024-07-02 19:18:36:     at TLSSocket.emit (node:events:518:28)
+2024-07-02 19:18:36:     at addChunk (node:internal/streams/readable:559:12)
+2024-07-02 19:18:36:     at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+2024-07-02 19:18:36:     at Readable.push (node:internal/streams/readable:390:5) {
+2024-07-02 19:18:36:   code: 'EAUTH',
+2024-07-02 19:18:36:   response: '535-5.7.8 Username and Password not accepted. For more information, go to\n' +
+2024-07-02 19:18:36:     '535 5.7.8  https://support.google.com/mail/?p=BadCredentials d2e1a72fcca58-708043b710fsm8885639b3a.156 - gsmtp',
+2024-07-02 19:18:36:   responseCode: 535,
+2024-07-02 19:18:36:   command: 'AUTH PLAIN'
+2024-07-02 19:18:36: }
+2024-07-02 19:25:55: Error al enviar el correo: ReferenceError: alert is not defined
+2024-07-02 19:25:55:     at file:///todo/proyectos/duoc/Integracion/server.mjs:193:5
+2024-07-02 19:25:55:     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-07-02 19:26:16: Error al enviar el correo: ReferenceError: alert is not defined
+2024-07-02 19:26:16:     at file:///todo/proyectos/duoc/Integracion/server.mjs:193:5
+2024-07-02 19:26:16:     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-07-03 01:26:53: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 01:26:53:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 01:26:53:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 01:26:53:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 01:26:53:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 01:26:53:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 01:26:53:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 01:26:53:     at new Promise (<anonymous>)
+2024-07-03 01:26:53:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 01:26:53:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 01:26:53:     at file:///todo/proyectos/duoc/Integracion/server.mjs:377:65
+2024-07-03 01:34:23: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 01:34:23:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 01:34:23:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 01:34:23:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 01:34:23:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 01:34:23:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 01:34:23:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 01:34:23:     at new Promise (<anonymous>)
+2024-07-03 01:34:23:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 01:34:23:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 01:34:23:     at file:///todo/proyectos/duoc/Integracion/server.mjs:377:65
+2024-07-03 03:35:15: Error al crear la transacción: Error [TransbankError]: AxiosError: Request failed with status code 422
+2024-07-03 03:35:15: amount is required!
+2024-07-03 03:35:15: 
+2024-07-03 03:35:15:     at new TransbankError (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/transbank_error.js:21:28)
+2024-07-03 03:35:15:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/request_service.js:87:27
+2024-07-03 03:35:15:     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-07-03 03:35:15:     at async file:///todo/proyectos/duoc/Integracion/server.mjs:357:28
+2024-07-03 03:35:34: Error al crear la transacción: Error [TransbankError]: AxiosError: Request failed with status code 422
+2024-07-03 03:35:34: amount is required!
+2024-07-03 03:35:34: 
+2024-07-03 03:35:34:     at new TransbankError (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/transbank_error.js:21:28)
+2024-07-03 03:35:34:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/request_service.js:87:27
+2024-07-03 03:35:34:     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-07-03 03:35:34:     at async file:///todo/proyectos/duoc/Integracion/server.mjs:357:28
+2024-07-03 03:44:51: ReferenceError: /todo/proyectos/duoc/Integracion/viewsejs/views/orden.ejs:36
+2024-07-03 03:44:51:     34|                   
+2024-07-03 03:44:51:     35|                 </div>
+2024-07-03 03:44:51:  >> 36|                 <form action="<%= url %>" method="POST">
+2024-07-03 03:44:51:     37|                 <div class="itemDetails">
+2024-07-03 03:44:51:     38|                   <h3>Entrega Estimada <span id="fechaEntrega"></span></h3>
+2024-07-03 03:44:51:     39|                   <p id="ordenGenerada">ORDEN # </p>
+2024-07-03 03:44:51: 
+2024-07-03 03:44:51: url is not defined
+2024-07-03 03:44:51:     at eval ("/todo/proyectos/duoc/Integracion/viewsejs/views/orden.ejs":18:26)
+2024-07-03 03:44:51:     at orden (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:703:17)
+2024-07-03 03:44:51:     at tryHandleCache (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:274:36)
+2024-07-03 03:44:51:     at exports.renderFile [as engine] (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:491:10)
+2024-07-03 03:44:51:     at View.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/view.js:135:8)
+2024-07-03 03:44:51:     at tryRender (/todo/proyectos/duoc/Integracion/node_modules/express/lib/application.js:657:10)
+2024-07-03 03:44:51:     at Function.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/application.js:609:3)
+2024-07-03 03:44:51:     at ServerResponse.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/response.js:1048:7)
+2024-07-03 03:44:51:     at file:///todo/proyectos/duoc/Integracion/server.mjs:347:7
+2024-07-03 03:44:51:     at Layer.handle [as handle_request] (/todo/proyectos/duoc/Integracion/node_modules/express/lib/router/layer.js:95:5)
+2024-07-03 03:45:56: ReferenceError: url is not defined
+2024-07-03 03:45:56:     at file:///todo/proyectos/duoc/Integracion/server.mjs:347:35
+2024-07-03 03:45:56:     at Layer.handle [as handle_request] (/todo/proyectos/duoc/Integracion/node_modules/express/lib/router/layer.js:95:5)
+2024-07-03 03:45:56:     at next (/todo/proyectos/duoc/Integracion/node_modules/express/lib/router/route.js:149:13)
+2024-07-03 03:45:56:     at Route.dispatch (/todo/proyectos/duoc/Integracion/node_modules/express/lib/router/route.js:119:3)
+2024-07-03 03:45:56:     at Layer.handle [as handle_request] (/todo/proyectos/duoc/Integracion/node_modules/express/lib/router/layer.js:95:5)
+2024-07-03 03:45:56:     at /todo/proyectos/duoc/Integracion/node_modules/express/lib/router/index.js:284:15
+2024-07-03 03:45:56:     at Function.process_params (/todo/proyectos/duoc/Integracion/node_modules/express/lib/router/index.js:346:12)
+2024-07-03 03:45:56:     at next (/todo/proyectos/duoc/Integracion/node_modules/express/lib/router/index.js:280:10)
+2024-07-03 03:45:56:     at urlencodedParser (/todo/proyectos/duoc/Integracion/node_modules/body-parser/lib/types/urlencoded.js:91:7)
+2024-07-03 03:45:56:     at Layer.handle [as handle_request] (/todo/proyectos/duoc/Integracion/node_modules/express/lib/router/layer.js:95:5)
+2024-07-03 03:56:42: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 03:56:42:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 03:56:42:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 03:56:42:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 03:56:42:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 03:56:42:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 03:56:42:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 03:56:42:     at new Promise (<anonymous>)
+2024-07-03 03:56:42:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 03:56:42:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 03:56:42:     at file:///todo/proyectos/duoc/Integracion/server.mjs:375:65
+2024-07-03 03:58:04: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 03:58:04:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 03:58:04:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 03:58:04:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 03:58:04:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 03:58:04:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 03:58:04:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 03:58:04:     at new Promise (<anonymous>)
+2024-07-03 03:58:04:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 03:58:04:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 03:58:04:     at file:///todo/proyectos/duoc/Integracion/server.mjs:375:65
+2024-07-03 03:58:06: Error al crear la transacción: Error: 'buyOrder' can't be null or white space
+2024-07-03 03:58:06:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 03:58:06:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 03:58:06:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:91:43)
+2024-07-03 03:58:06:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 03:58:06:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 03:58:06:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 03:58:06:     at new Promise (<anonymous>)
+2024-07-03 03:58:06:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 03:58:06:     at Transaction.create (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:88:16)
+2024-07-03 03:58:06:     at file:///todo/proyectos/duoc/Integracion/server.mjs:354:65
+2024-07-03 03:58:16: Error al crear la transacción: Error: 'buyOrder' can't be null or white space
+2024-07-03 03:58:16:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 03:58:16:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 03:58:16:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:91:43)
+2024-07-03 03:58:16:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 03:58:16:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 03:58:16:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 03:58:16:     at new Promise (<anonymous>)
+2024-07-03 03:58:16:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 03:58:16:     at Transaction.create (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:88:16)
+2024-07-03 03:58:16:     at file:///todo/proyectos/duoc/Integracion/server.mjs:354:65
+2024-07-03 03:59:26: ReferenceError: /todo/proyectos/duoc/Integracion/viewsejs/views/orden.ejs:36
+2024-07-03 03:59:26:     34|                   
+2024-07-03 03:59:26:     35|                 </div>
+2024-07-03 03:59:26:  >> 36|                 <!-- <form action="<%= url %>" method="POST"> -->
+2024-07-03 03:59:26:     37|                 <div class="itemDetails">
+2024-07-03 03:59:26:     38|                   <h3>Entrega Estimada <span id="fechaEntrega"></span></h3>
+2024-07-03 03:59:26:     39|                   <p id="ordenGenerada">ORDEN # </p>
+2024-07-03 03:59:26: 
+2024-07-03 03:59:26: url is not defined
+2024-07-03 03:59:26:     at eval ("/todo/proyectos/duoc/Integracion/viewsejs/views/orden.ejs":18:26)
+2024-07-03 03:59:26:     at orden (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:703:17)
+2024-07-03 03:59:26:     at tryHandleCache (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:274:36)
+2024-07-03 03:59:26:     at exports.renderFile [as engine] (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:491:10)
+2024-07-03 03:59:26:     at View.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/view.js:135:8)
+2024-07-03 03:59:26:     at tryRender (/todo/proyectos/duoc/Integracion/node_modules/express/lib/application.js:657:10)
+2024-07-03 03:59:26:     at Function.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/application.js:609:3)
+2024-07-03 03:59:26:     at ServerResponse.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/response.js:1048:7)
+2024-07-03 03:59:26:     at file:///todo/proyectos/duoc/Integracion/server.mjs:348:7
+2024-07-03 03:59:26:     at Layer.handle [as handle_request] (/todo/proyectos/duoc/Integracion/node_modules/express/lib/router/layer.js:95:5)
+2024-07-03 03:59:47: ReferenceError: /todo/proyectos/duoc/Integracion/viewsejs/views/orden.ejs:36
+2024-07-03 03:59:47:     34|                   
+2024-07-03 03:59:47:     35|                 </div>
+2024-07-03 03:59:47:  >> 36|                 <!-- <form action="<%= url %>" method="POST"> -->
+2024-07-03 03:59:47:     37|                 <div class="itemDetails">
+2024-07-03 03:59:47:     38|                   <h3>Entrega Estimada <span id="fechaEntrega"></span></h3>
+2024-07-03 03:59:47:     39|                   <p id="ordenGenerada">ORDEN # </p>
+2024-07-03 03:59:47: 
+2024-07-03 03:59:47: url is not defined
+2024-07-03 03:59:47:     at eval ("/todo/proyectos/duoc/Integracion/viewsejs/views/orden.ejs":18:26)
+2024-07-03 03:59:47:     at orden (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:703:17)
+2024-07-03 03:59:47:     at tryHandleCache (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:274:36)
+2024-07-03 03:59:47:     at exports.renderFile [as engine] (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:491:10)
+2024-07-03 03:59:47:     at View.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/view.js:135:8)
+2024-07-03 03:59:47:     at tryRender (/todo/proyectos/duoc/Integracion/node_modules/express/lib/application.js:657:10)
+2024-07-03 03:59:47:     at Function.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/application.js:609:3)
+2024-07-03 03:59:47:     at ServerResponse.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/response.js:1048:7)
+2024-07-03 03:59:47:     at file:///todo/proyectos/duoc/Integracion/server.mjs:348:7
+2024-07-03 03:59:47:     at Layer.handle [as handle_request] (/todo/proyectos/duoc/Integracion/node_modules/express/lib/router/layer.js:95:5)
+2024-07-03 03:59:57: ReferenceError: /todo/proyectos/duoc/Integracion/viewsejs/views/orden.ejs:36
+2024-07-03 03:59:57:     34|                   
+2024-07-03 03:59:57:     35|                 </div>
+2024-07-03 03:59:57:  >> 36|                 <!-- <form action="<%= url %>" method="POST"> -->
+2024-07-03 03:59:57:     37|                 <div class="itemDetails">
+2024-07-03 03:59:57:     38|                   <h3>Entrega Estimada <span id="fechaEntrega"></span></h3>
+2024-07-03 03:59:57:     39|                   <p id="ordenGenerada">ORDEN # </p>
+2024-07-03 03:59:57: 
+2024-07-03 03:59:57: url is not defined
+2024-07-03 03:59:57:     at eval ("/todo/proyectos/duoc/Integracion/viewsejs/views/orden.ejs":18:26)
+2024-07-03 03:59:57:     at orden (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:703:17)
+2024-07-03 03:59:57:     at tryHandleCache (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:274:36)
+2024-07-03 03:59:57:     at exports.renderFile [as engine] (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:491:10)
+2024-07-03 03:59:57:     at View.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/view.js:135:8)
+2024-07-03 03:59:57:     at tryRender (/todo/proyectos/duoc/Integracion/node_modules/express/lib/application.js:657:10)
+2024-07-03 03:59:57:     at Function.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/application.js:609:3)
+2024-07-03 03:59:57:     at ServerResponse.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/response.js:1048:7)
+2024-07-03 03:59:57:     at file:///todo/proyectos/duoc/Integracion/server.mjs:348:7
+2024-07-03 03:59:57:     at Layer.handle [as handle_request] (/todo/proyectos/duoc/Integracion/node_modules/express/lib/router/layer.js:95:5)
+2024-07-03 04:11:36: Error al crear la transacción: Error [TransbankError]: AxiosError: timeout of 60000ms exceeded
+2024-07-03 04:11:36: Unexpected error
+2024-07-03 04:11:36: 
+2024-07-03 04:11:36:     at new TransbankError (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/transbank_error.js:21:28)
+2024-07-03 04:11:36:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/request_service.js:87:27
+2024-07-03 04:11:36:     at async file:///todo/proyectos/duoc/Integracion/server.mjs:356:28
+2024-07-03 04:19:12: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 04:19:12:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 04:19:12:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 04:19:12:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 04:19:12:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 04:19:12:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 04:19:12:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 04:19:12:     at new Promise (<anonymous>)
+2024-07-03 04:19:12:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 04:19:12:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 04:19:12:     at file:///todo/proyectos/duoc/Integracion/server.mjs:383:65
+2024-07-03 04:20:11: ReferenceError: commitResponse is not defined
+2024-07-03 04:20:11:     at file:///todo/proyectos/duoc/Integracion/server.mjs:386:39
+2024-07-03 04:20:25: ReferenceError: commitResponse is not defined
+2024-07-03 04:20:25:     at file:///todo/proyectos/duoc/Integracion/server.mjs:386:39
+2024-07-03 04:34:13: ReferenceError: commitResponse is not defined
+2024-07-03 04:34:13:     at file:///todo/proyectos/duoc/Integracion/server.mjs:386:39
+2024-07-03 04:35:01: ReferenceError: commitResponse is not defined
+2024-07-03 04:35:01:     at file:///todo/proyectos/duoc/Integracion/server.mjs:388:48
+2024-07-03 04:35:57: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 04:35:57:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 04:35:57:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 04:35:57:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 04:35:57:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 04:35:57:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 04:35:57:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 04:35:57:     at new Promise (<anonymous>)
+2024-07-03 04:35:57:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 04:35:57:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 04:35:57:     at file:///todo/proyectos/duoc/Integracion/server.mjs:383:65
+2024-07-03 04:35:57: Error: Failed to lookup view "views/error.ejs" in views directory "./viewsejs"
+2024-07-03 04:35:57:     at Function.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/application.js:597:17)
+2024-07-03 04:35:57:     at ServerResponse.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/response.js:1048:7)
+2024-07-03 04:35:57:     at file:///todo/proyectos/duoc/Integracion/server.mjs:389:21
+2024-07-03 04:36:27: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 04:36:27:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 04:36:27:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 04:36:27:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 04:36:27:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 04:36:27:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 04:36:27:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 04:36:27:     at new Promise (<anonymous>)
+2024-07-03 04:36:27:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 04:36:27:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 04:36:27:     at file:///todo/proyectos/duoc/Integracion/server.mjs:383:65
+2024-07-03 04:36:27: ReferenceError: /todo/proyectos/duoc/Integracion/viewsejs/views/return.ejs:11
+2024-07-03 04:36:27:     9|   <h1>Resultado del Pago</h1>
+2024-07-03 04:36:27:     10|   <pre>
+2024-07-03 04:36:27:  >> 11|     <%= JSON.stringify(commitResponse, null, 2) %>
+2024-07-03 04:36:27:     12|   </pre>
+2024-07-03 04:36:27:     13| 
+2024-07-03 04:36:27:     14| </div>
+2024-07-03 04:36:27: 
+2024-07-03 04:36:27: commitResponse is not defined
+2024-07-03 04:36:27:     at eval ("/todo/proyectos/duoc/Integracion/viewsejs/views/return.ejs":18:41)
+2024-07-03 04:36:27:     at return (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:703:17)
+2024-07-03 04:36:27:     at tryHandleCache (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:274:36)
+2024-07-03 04:36:27:     at exports.renderFile [as engine] (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:491:10)
+2024-07-03 04:36:27:     at View.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/view.js:135:8)
+2024-07-03 04:36:27:     at tryRender (/todo/proyectos/duoc/Integracion/node_modules/express/lib/application.js:657:10)
+2024-07-03 04:36:27:     at Function.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/application.js:609:3)
+2024-07-03 04:36:27:     at ServerResponse.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/response.js:1048:7)
+2024-07-03 04:36:27:     at file:///todo/proyectos/duoc/Integracion/server.mjs:389:21
+2024-07-03 04:36:49: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 04:36:49:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 04:36:49:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 04:36:49:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 04:36:49:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 04:36:49:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 04:36:49:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 04:36:49:     at new Promise (<anonymous>)
+2024-07-03 04:36:49:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 04:36:49:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 04:36:49:     at file:///todo/proyectos/duoc/Integracion/server.mjs:383:65
+2024-07-03 04:37:32: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 04:37:32:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 04:37:32:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 04:37:32:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 04:37:32:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 04:37:32:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 04:37:32:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 04:37:32:     at new Promise (<anonymous>)
+2024-07-03 04:37:32:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 04:37:32:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 04:37:32:     at file:///todo/proyectos/duoc/Integracion/server.mjs:383:65
+2024-07-03 04:42:09: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 04:42:09:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 04:42:09:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 04:42:09:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 04:42:09:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 04:42:09:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 04:42:09:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 04:42:09:     at new Promise (<anonymous>)
+2024-07-03 04:42:09:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 04:42:09:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 04:42:09:     at file:///todo/proyectos/duoc/Integracion/server.mjs:383:65
+2024-07-03 04:43:05: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 04:43:05:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 04:43:05:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 04:43:05:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 04:43:05:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 04:43:05:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 04:43:05:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 04:43:05:     at new Promise (<anonymous>)
+2024-07-03 04:43:05:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 04:43:05:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 04:43:05:     at file:///todo/proyectos/duoc/Integracion/server.mjs:383:65
+2024-07-03 04:48:08: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 04:48:08:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 04:48:08:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 04:48:08:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 04:48:08:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 04:48:08:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 04:48:08:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 04:48:08:     at new Promise (<anonymous>)
+2024-07-03 04:48:08:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 04:48:08:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 04:48:08:     at file:///todo/proyectos/duoc/Integracion/server.mjs:383:65
+2024-07-03 04:48:28: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 04:48:28:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 04:48:28:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 04:48:28:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 04:48:28:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 04:48:28:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 04:48:28:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 04:48:28:     at new Promise (<anonymous>)
+2024-07-03 04:48:28:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 04:48:28:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 04:48:28:     at file:///todo/proyectos/duoc/Integracion/server.mjs:383:65
+2024-07-03 04:50:08: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 04:50:08:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 04:50:08:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 04:50:08:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 04:50:08:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 04:50:08:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 04:50:08:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 04:50:08:     at new Promise (<anonymous>)
+2024-07-03 04:50:08:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 04:50:08:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 04:50:08:     at file:///todo/proyectos/duoc/Integracion/server.mjs:383:65
+2024-07-03 04:50:17: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 04:50:17:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 04:50:17:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 04:50:17:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 04:50:17:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 04:50:17:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 04:50:17:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 04:50:17:     at new Promise (<anonymous>)
+2024-07-03 04:50:17:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 04:50:17:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 04:50:17:     at file:///todo/proyectos/duoc/Integracion/server.mjs:383:65
+2024-07-03 04:50:40: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 04:50:40:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 04:50:40:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 04:50:40:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 04:50:40:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 04:50:40:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 04:50:40:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 04:50:40:     at new Promise (<anonymous>)
+2024-07-03 04:50:40:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 04:50:40:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 04:50:40:     at file:///todo/proyectos/duoc/Integracion/server.mjs:383:65
+2024-07-03 04:51:24: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 04:51:24:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 04:51:24:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 04:51:24:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 04:51:24:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 04:51:24:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 04:51:24:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 04:51:24:     at new Promise (<anonymous>)
+2024-07-03 04:51:24:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 04:51:24:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 04:51:24:     at file:///todo/proyectos/duoc/Integracion/server.mjs:383:65
+2024-07-03 04:52:30: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 04:52:30:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 04:52:30:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 04:52:30:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 04:52:30:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 04:52:30:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 04:52:30:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 04:52:30:     at new Promise (<anonymous>)
+2024-07-03 04:52:30:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 04:52:30:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 04:52:30:     at file:///todo/proyectos/duoc/Integracion/server.mjs:383:65
+2024-07-03 04:53:38: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 04:53:38:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 04:53:38:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 04:53:38:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 04:53:38:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 04:53:38:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 04:53:38:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 04:53:38:     at new Promise (<anonymous>)
+2024-07-03 04:53:38:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 04:53:38:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 04:53:38:     at file:///todo/proyectos/duoc/Integracion/server.mjs:383:65
+2024-07-03 04:54:14: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 04:54:14:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 04:54:14:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 04:54:14:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 04:54:14:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 04:54:14:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 04:54:14:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 04:54:14:     at new Promise (<anonymous>)
+2024-07-03 04:54:14:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 04:54:14:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 04:54:14:     at file:///todo/proyectos/duoc/Integracion/server.mjs:383:65
+2024-07-03 07:02:36: Error: Failed to lookup view "seguimiento.ejs" in views directory "./viewsejs"
+2024-07-03 07:02:36:     at Function.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/application.js:597:17)
+2024-07-03 07:02:36:     at ServerResponse.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/response.js:1048:7)
+2024-07-03 07:02:36:     at file:///todo/proyectos/duoc/Integracion/server.mjs:282:9
+2024-07-03 07:02:36:     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-07-03 07:32:35: ReferenceError: /todo/proyectos/duoc/Integracion/viewsejs/views/bodeguero.ejs:60
+2024-07-03 07:32:35:     58|   </body>
+2024-07-03 07:32:35:     59| 
+2024-07-03 07:32:35:  >> 60|   <%- include('../modulos/crearModal.ejs');%>
+2024-07-03 07:32:35:     61| 
+2024-07-03 07:32:35:     62| 
+2024-07-03 07:32:35:     63| 
+2024-07-03 07:32:35: 
+2024-07-03 07:32:35: /todo/proyectos/duoc/Integracion/viewsejs/modulos/crearModal.ejs:51
+2024-07-03 07:32:35:     49|               <select class="form-select" id="tipoInput" name="tipoInput" required>
+2024-07-03 07:32:35:     50|                 <option value="" disabled selected>Seleccione una opción</option>
+2024-07-03 07:32:35:  >> 51|                 <% tipos.forEach(function(result) { %>
+2024-07-03 07:32:35:     52|                     <option value="<%= result.ID %>"><%= result.Tipo %></option>
+2024-07-03 07:32:35:     53|                 <% }); %>
+2024-07-03 07:32:35:     54|             </select>
+2024-07-03 07:32:35: 
+2024-07-03 07:32:35: tipos is not defined
+2024-07-03 07:32:35:     at eval ("/todo/proyectos/duoc/Integracion/viewsejs/modulos/crearModal.ejs":12:8)
+2024-07-03 07:32:35:     at crearModal (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:703:17)
+2024-07-03 07:32:35:     at include (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:701:39)
+2024-07-03 07:32:35:     at eval ("/todo/proyectos/duoc/Integracion/viewsejs/views/bodeguero.ejs":15:17)
+2024-07-03 07:32:35:     at bodeguero (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:703:17)
+2024-07-03 07:32:35:     at tryHandleCache (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:274:36)
+2024-07-03 07:32:35:     at exports.renderFile [as engine] (/todo/proyectos/duoc/Integracion/node_modules/ejs/lib/ejs.js:491:10)
+2024-07-03 07:32:35:     at View.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/view.js:135:8)
+2024-07-03 07:32:35:     at tryRender (/todo/proyectos/duoc/Integracion/node_modules/express/lib/application.js:657:10)
+2024-07-03 07:32:35:     at Function.render (/todo/proyectos/duoc/Integracion/node_modules/express/lib/application.js:609:3)
+2024-07-03 08:21:01: Error al confirmar la transacción: Error: 'token' can't be null or white space
+2024-07-03 08:21:01:     at ValidationUtil.hasText (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:8:19)
+2024-07-03 08:21:01:     at ValidationUtil.hasTextWithMaxLength (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/common/validation_util.js:11:24)
+2024-07-03 08:21:01:     at Transaction.<anonymous> (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:106:43)
+2024-07-03 08:21:01:     at step (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:48:23)
+2024-07-03 08:21:01:     at Object.next (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:29:53)
+2024-07-03 08:21:01:     at /todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:23:71
+2024-07-03 08:21:01:     at new Promise (<anonymous>)
+2024-07-03 08:21:01:     at __awaiter (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:19:12)
+2024-07-03 08:21:01:     at Transaction.commit (/todo/proyectos/duoc/Integracion/node_modules/transbank-sdk/dist/es5/transbank/webpay/webpay_plus/transaction.js:104:16)
+2024-07-03 08:21:01:     at file:///todo/proyectos/duoc/Integracion/server.mjs:485:65
